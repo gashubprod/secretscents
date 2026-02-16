@@ -846,6 +846,32 @@ img {
     margin-bottom: 8px;
 }
 
+/* Fragrance Notes */
+.fragrance-notes {
+    background: linear-gradient(135deg, #faf8f4, #f5f0e8);
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--gold);
+}
+
+.fragrance-notes .note {
+    font-size: 0.68rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    display: flex;
+    gap: 6px;
+}
+
+.fragrance-notes .note-label {
+    font-weight: 600;
+    color: var(--gold-dark);
+    min-width: 34px;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 .product-rating {
     margin-bottom: 8px;
 }
