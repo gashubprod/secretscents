@@ -121,3 +121,105 @@ document.querySelectorAll('.product-actions button:first-child').forEach(btn => 
         }
     });
 });
+
+// ===== Countdown Timer (Urgency) =====
+function startCountdown() {
+    // Set countdown to 8 hours, 45 minutes, 30 seconds from now
+    let totalSeconds = 8 * 3600 + 45 * 60 + 30;
+
+    function updateCountdown() {
+        if (totalSeconds <= 0) {
+            totalSeconds = 8 * 3600 + 45 * 60 + 30; // reset
+        }
+        const h = Math.floor(totalSeconds / 3600);
+        const m = Math.floor((totalSeconds % 3600) / 60);
+        const s = totalSeconds % 60;
+
+        document.getElementById('hours').textContent = String(h).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+        totalSeconds--;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
+startCountdown();
+
+// ===== Animated Stats Counter =====
+function animateCounters() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-target'));
+                const duration = 2000;
+                const start = performance.now();
+
+                function updateNumber(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // Ease out cubic
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    el.textContent = Math.floor(eased * target).toLocaleString();
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        el.textContent = target.toLocaleString();
+                    }
+                }
+
+                requestAnimationFrame(updateNumber);
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(num => observer.observe(num));
+}
+
+animateCounters();
+
+// ===== "Recently Bought" Toast Notification =====
+const recentBuyers = [
+    { name: 'Sarah from Nairobi', product: 'Creed Aventus', time: '2 min ago' },
+    { name: 'Kevin from Mombasa', product: 'Dior Sauvage Elixir', time: '5 min ago' },
+    { name: 'Grace from Kisumu', product: 'Baccarat Rouge 540', time: '8 min ago' },
+    { name: 'Brian from Nakuru', product: 'Tom Ford Ombre Leather', time: '12 min ago' },
+    { name: 'Wanjiku from Thika', product: 'YSL Libre Intense', time: '15 min ago' },
+];
+
+let toastIndex = 0;
+
+function showBuyerToast() {
+    const buyer = recentBuyers[toastIndex % recentBuyers.length];
+    const toast = document.createElement('div');
+    toast.className = 'buyer-toast';
+    toast.innerHTML = `
+        <i class="fas fa-shopping-bag"></i>
+        <div>
+            <strong>${buyer.name}</strong> just purchased<br>
+            <span>${buyer.product}</span>
+            <small>${buyer.time}</small>
+        </div>
+        <button onclick="this.parentElement.remove()"><i class="fas fa-times"></i></button>
+    `;
+
+    document.body.appendChild(toast);
+    setTimeout(() => toast.classList.add('show'), 100);
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 400);
+    }, 5000);
+
+    toastIndex++;
+}
+
+// Show first toast after 6 seconds, then every 25 seconds
+setTimeout(() => {
+    showBuyerToast();
+    setInterval(showBuyerToast, 25000);
+}, 6000);
