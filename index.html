@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Scents - Discover Your Signature Fragrance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <span>Free shipping on orders over KSH 5,000</span>
+            <div class="top-bar-right">
+                <a href="#">Track Order</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">
+                <i class="fas fa-spray-can-sparkles logo-icon"></i>
+                <div class="logo-text">
+                    <span class="logo-name">Secret<span class="logo-accent">Scents</span></span>
+                    <span class="logo-tagline">...Unveil Your Essence</span>
+                </div>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search for perfumes...">
+                <div class="search-category">
+                    <select>
+                        <option>All Categories</option>
+                        <option>Men</option>
+                        <option>Women</option>
+                        <option>Unisex</option>
+                        <option>Niche</option>
+                        <option>Kids</option>
+                        <option>Gift Sets</option>
+                    </select>
+                </div>
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <a href="#" class="action-icon" title="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="badge">0</span>
+                </a>
+                <a href="#" class="action-icon cart-icon" title="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge">0</span>
+                    <span class="cart-total">KSH 0.00</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#">MEN</a></li>
+                <li><a href="#">WOMEN</a></li>
+                <li><a href="#">UNISEX</a></li>
+                <li><a href="#">NICHE</a></li>
+                <li><a href="#">KIDS</a></li>
+                <li><a href="#">GIFT SETS</a></li>
+                <li><a href="#">GIFT CARDS</a></li>
+                <li><a href="#">TERMS &amp; POLICIES</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slide active" id="slide1">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1>UNISEX PERFUMES</h1>
+                    <p class="slide-subtitle">The best alternatives for both of you</p>
+                    <a href="#" class="btn-shop">SHOP NOW</a>
+                </div>
+                <div class="slide-images">
+                    <div class="perfume-float p1"></div>
+                    <div class="perfume-float p2"></div>
+                    <div class="perfume-float p3"></div>
+                </div>
+            </div>
+            <div class="slide" id="slide2">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1>DESIGNER FRAGRANCES</h1>
+                    <p class="slide-subtitle">Authentic luxury scents at unbeatable prices</p>
+                    <a href="#" class="btn-shop">EXPLORE</a>
+                </div>
+            </div>
+            <div class="slide" id="slide3">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1>NICHE COLLECTION</h1>
+                    <p class="slide-subtitle">Exclusive fragrances for the distinguished</p>
+                    <a href="#" class="btn-shop">DISCOVER</a>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- Category Banners -->
+    <section class="category-banners">
+        <div class="container">
+            <div class="banner-grid">
+                <div class="banner banner-kids">
+                    <div class="banner-overlay"></div>
+                    <div class="banner-content">
+                        <h3>PERFUMES FOR</h3>
+                        <h2>KIDS</h2>
+                        <a href="#" class="btn-banner">Shop Now</a>
+                    </div>
+                </div>
+                <div class="banner banner-gifts">
+                    <div class="banner-overlay"></div>
+                    <div class="banner-content">
+                        <h2>GIFT SETS</h2>
+                        <p>The perfect present</p>
+                        <a href="#" class="btn-banner">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="new-arrivals">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <i class="fas fa-chevron-right"></i>
+                    <h2>New Arrivals</h2>
+                </div>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="gold-divider"></div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea081dc9b6b?w=300&h=300&fit=crop" alt="Giorgio Armani Acqua Di Gio">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                            <button title="Quick View"><i class="far fa-eye"></i></button>
+                            <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Giorgio Armani Acqua Di Gio</h3>
+                        <p class="product-desc">Eau de Parfum, 75ml</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">KSH 12,500</span>
+                            <span class="price-old">KSH 15,000</span>
+                        </div>
+                        <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge sale">-20%</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=300&h=300&fit=crop" alt="Calvin Klein Obsession">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                            <button title="Quick View"><i class="far fa-eye"></i></button>
+                            <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Calvin Klein Obsession for Him</h3>
+                        <p class="product-desc">Gift Set - EDT 125ml + After Shave</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">KSH 8,900</span>
+                            <span class="price-old">KSH 11,200</span>
+                        </div>
+                        <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?w=300&h=300&fit=crop" alt="Calvin Klein Obsession for Her">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                            <button title="Quick View"><i class="far fa-eye"></i></button>
+                            <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Calvin Klein Obsession for Her</h3>
+                        <p class="product-desc">Gift Set - EDP 100ml + Body Lotion 200ml</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">KSH 9,500</span>
+                        </div>
+                        <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge hot">Hot</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=300&h=300&fit=crop" alt="Creed Absolu Aventus">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                            <button title="Quick View"><i class="far fa-eye"></i></button>
+                            <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Creed Absolu Aventus</h3>
+                        <p class="product-desc">Eau de Parfum, 100ml</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">KSH 35,000</span>
+                            <span class="price-old">KSH 42,000</span>
+                        </div>
+                        <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=300&h=300&fit=crop" alt="Versace Man Eau Fraiche">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                            <button title="Quick View"><i class="far fa-eye"></i></button>
+                            <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Versace Man Eau Fraiche Extreme</h3>
+                        <p class="product-desc">Pour Homme - EDP, 100ml</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">KSH 14,200</span>
+                        </div>
+                        <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="best-sellers">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <i class="fas fa-chevron-right"></i>
+                    <h2>Best Sellers</h2>
+                </div>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="gold-divider"></div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=300&h=300&fit=crop" alt="Tom Ford Ombre Leather">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                            <button title="Quick View"><i class="far fa-eye"></i></button>
+                            <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tom Ford Ombre Leather</h3>
+                        <p class="product-desc">Eau de Parfum, 100ml</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">KSH 28,500</span>
+                        </div>
+                        <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge sale">-15%</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=300&h=300&fit=crop" alt="Maison Francis Kurkdjian">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                            <button title="Quick View"><i class="far fa-eye"></i></button>
+                            <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Maison Francis Kurkdjian Baccarat Rouge</h3>
+                        <p class="product-desc">Eau de Parfum, 70ml</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">KSH 45,000</span>
+                            <span class="price-old">KSH 52,900</span>
+                        </div>
+                        <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1595425964272-fc617fa19dfa?w=300&h=300&fit=crop" alt="Dior Sauvage">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                            <button title="Quick View"><i class="far fa-eye"></i></button>
+                            <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Dior Sauvage Elixir</h3>
+                        <p class="product-desc">Parfum Concentrate, 60ml</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">KSH 18,700</span>
+                        </div>
+                        <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?w=300&h=300&fit=crop" alt="Chanel No. 5">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                            <button title="Quick View"><i class="far fa-eye"></i></button>
+                            <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chanel No. 5 L'Eau</h3>
+                        <p class="product-desc">Eau de Toilette, 100ml</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">KSH 22,000</span>
+                            <span class="price-old">KSH 25,000</span>
+                        </div>
+                        <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge hot">Hot</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea081dc9b6b?w=300&h=300&fit=crop" alt="YSL Libre">
+                        <div class="product-actions">
+                            <button title="Add to Wishlist"><i class="far fa-heart"></i></button>
+                            <button title="Quick View"><i class="far fa-eye"></i></button>
+                            <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>YSL Libre Intense</h3>
+                        <p class="product-desc">Eau de Parfum, 90ml</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">KSH 16,800</span>
+                        </div>
+                        <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Bar -->
+    <section class="features-bar">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <div>
+                        <h4>Free Delivery</h4>
+                        <p>On orders above KSH 5,000</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-halved"></i>
+                    <div>
+                        <h4>100% Authentic</h4>
+                        <p>Guaranteed genuine products</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-rotate-left"></i>
+                    <div>
+                        <h4>Easy Returns</h4>
+                        <p>7-day return policy</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <div>
+                        <h4>24/7 Support</h4>
+                        <p>Always here to help</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay in the Loop</h2>
+                <p>Subscribe for exclusive deals, new arrivals, and fragrance tips</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button type="submit">SUBSCRIBE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-spray-can-sparkles"></i>
+                        <span>Secret<span class="logo-accent">Scents</span></span>
+                    </div>
+                    <p>Your trusted destination for authentic designer and niche perfumes. Unveil your essence with Secret Scents.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Men's Perfumes</a></li>
+                        <li><a href="#">Women's Perfumes</a></li>
+                        <li><a href="#">Unisex</a></li>
+                        <li><a href="#">Niche Fragrances</a></li>
+                        <li><a href="#">Gift Sets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+                        <li><i class="fas fa-phone"></i> +254 700 123 456</li>
+                        <li><i class="fas fa-envelope"></i> hello@secretscents.co.ke</li>
+                        <li><i class="fas fa-clock"></i> Mon - Sat: 9AM - 7PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Secret Scents. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <span class="mpesa-badge">M-PESA</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
