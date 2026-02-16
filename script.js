@@ -10,7 +10,20 @@ function goToSlide(index) {
     slides[currentSlide].classList.remove('active');
     dots[currentSlide].classList.remove('active');
     currentSlide = (index + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
+
+    // Re-trigger animations by cloning and replacing content/bottles
+    const newSlide = slides[currentSlide];
+    const content = newSlide.querySelector('.slide-content');
+    const bottles = newSlide.querySelectorAll('.hero-bottle');
+
+    // Force animation restart
+    content.style.animation = 'none';
+    bottles.forEach(b => b.style.animation = 'none');
+    void newSlide.offsetHeight; // trigger reflow
+    content.style.animation = '';
+    bottles.forEach(b => b.style.animation = '');
+
+    newSlide.classList.add('active');
     dots[currentSlide].classList.add('active');
 }
 

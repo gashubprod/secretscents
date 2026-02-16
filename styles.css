@@ -292,7 +292,7 @@ img {
 /* ===== Hero Slider ===== */
 .hero-slider {
     position: relative;
-    height: 450px;
+    height: 500px;
     overflow: hidden;
 }
 
@@ -314,6 +314,18 @@ img {
 .slide.active {
     opacity: 1;
 }
+
+.slide.active .slide-content {
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+.slide.active .hero-bottle {
+    animation: bottleReveal 0.8s ease forwards;
+}
+
+.slide.active .bottle-1 { animation-delay: 0.2s; }
+.slide.active .bottle-2 { animation-delay: 0.4s; }
+.slide.active .bottle-3 { animation-delay: 0.6s; }
 
 #slide1 {
     background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 50%, #e8d5a3 100%);
@@ -342,14 +354,28 @@ img {
     height: 100%;
     padding: 0 80px;
     color: var(--white);
+    max-width: 55%;
+    opacity: 0;
+}
+
+.slide-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+    border-left: 3px solid var(--gold);
+    padding-left: 12px;
 }
 
 .slide-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: 700;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
 }
 
 .slide-subtitle {
@@ -357,6 +383,125 @@ img {
     font-weight: 300;
     margin-bottom: 25px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Bottle Images */
+.slide-images {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.hero-bottle {
+    position: absolute;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+}
+
+.bottle-1 {
+    width: 180px;
+    height: 240px;
+    right: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    animation: floatUp 4s ease-in-out infinite;
+}
+
+.bottle-2 {
+    width: 140px;
+    height: 190px;
+    right: 42%;
+    top: 55%;
+    transform: translateY(-50%);
+    z-index: 2;
+    animation: floatUp 4.5s ease-in-out 0.5s infinite;
+}
+
+.bottle-3 {
+    width: 110px;
+    height: 155px;
+    right: 5%;
+    top: 20%;
+    z-index: 1;
+    animation: floatUp 5s ease-in-out 1s infinite;
+}
+
+/* Sparkle Particles */
+.sparkle-particles {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: sparkleFloat 3s ease-in-out infinite;
+}
+
+.sparkle:nth-child(1) { left: 60%; top: 20%; animation-delay: 0s; animation-duration: 3s; }
+.sparkle:nth-child(2) { left: 70%; top: 60%; animation-delay: 0.5s; animation-duration: 3.5s; }
+.sparkle:nth-child(3) { left: 80%; top: 35%; animation-delay: 1s; animation-duration: 2.8s; }
+.sparkle:nth-child(4) { left: 55%; top: 75%; animation-delay: 1.5s; animation-duration: 3.2s; }
+.sparkle:nth-child(5) { left: 90%; top: 50%; animation-delay: 0.8s; animation-duration: 4s; }
+.sparkle:nth-child(6) { left: 65%; top: 45%; animation-delay: 2s; animation-duration: 3.6s; }
+
+/* ===== Keyframe Animations ===== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bottleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes floatUp {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes sparkleFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1);
+    }
 }
 
 .btn-shop {
@@ -1061,11 +1206,12 @@ img {
     }
 
     .hero-slider {
-        height: 300px;
+        height: 350px;
     }
 
     .slide-content {
         padding: 0 30px;
+        max-width: 100%;
     }
 
     .slide-content h1 {
@@ -1074,6 +1220,16 @@ img {
 
     .slide-subtitle {
         font-size: 0.95rem;
+    }
+
+    .slide-images {
+        width: 35%;
+        opacity: 0.4;
+    }
+
+    .hero-bottle {
+        width: 100px !important;
+        height: 140px !important;
     }
 
     .banner-grid {
@@ -1128,10 +1284,14 @@ img {
     }
 
     .hero-slider {
-        height: 250px;
+        height: 280px;
     }
 
     .slide-content h1 {
         font-size: 1.5rem;
+    }
+
+    .slide-images {
+        display: none;
     }
 }
